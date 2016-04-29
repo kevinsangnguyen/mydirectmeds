@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+		<link href="img/favicon.ico" rel="icon" type="image/x-icon" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +24,41 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 11,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(37.294621, -121.945598),
+
+                    // How you would like to style the map.
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(37.294621, -121.945598),
+                    map: map,
+                    title: 'Snazzy!'
+                });
+            }
+    </script>
 </head>
 
 <body id="page-top" class="index">
@@ -34,8 +69,9 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-heading">DIRECT MED PHARMACY</div>
-								<h4>Personalized Service • Smart Packaging • Innovative Technology</h4>
-                <a href="#services" class="page-scroll btn btn-xl" style="margin-top:15px;">Tell Me More</a>
+								<h4>Personalized Service <span class="blue">•</span> Smart Packaging <span class="blue">•</span> Innovative Technology</h4>
+                	<a href="#services" class="page-scroll btn btn-xl" style="margin-top:15px;">What We Do</a>
+									<a href="#contact" class="page-scroll btn btn-xl" style="margin-top:15px;">Contact Us</a>
             </div>
         </div>
     </header>
@@ -85,6 +121,10 @@
                     <p class="text-muted">Managing your diabetes requires a major commitment to your health.  Let our pharmacy support your way to healthier living.  We know how important it is to keep and maintain healthy habits like monitoring your blood glucose levels, controlling your blood pressure and cholesterol, and to keeping your vaccines current.  We have the resources to help.</p>
                 </div>
             </div>
+						<div class="row" style="text-align:center;">
+							<a href="#contact" class="page-scroll btn btn-xl" style="margin-top:15px;">Get Started</a>
+							</span>
+						</div>
         </div>
     </section>
 
@@ -186,189 +226,18 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
-
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">After completing the field below, a trained customer representative will contact you to provide the personal service of getting prescription right to your door.</h3>
                 </div>
             </div>
             <div class="row">
+								<div class="col-lg-6" id="map">
+								</div>
                 <div class="col-lg-12">
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
