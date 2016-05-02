@@ -2,6 +2,17 @@
   color: #0C629E;
 }
 
+#logo{
+  margin: auto;
+}
+
+.heading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #map{
                 width: 750px;
                 height: 500px;
